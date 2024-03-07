@@ -6,11 +6,13 @@ import ChatIcon from '@mui/icons-material/Chat';
 import BookmarkIcon from '@mui/icons-material/Bookmark';
 import PersonIcon from '@mui/icons-material/Person';
 import SettingsIcon from '@mui/icons-material/Settings';
+import CloseFriend from './CloseFriend';
+import { Users } from '../dummyData';
 
 
 const Sidebar = () => {
     return (
-        <div className='flex m-0 p-0 w-2/12 border-gray-700'>
+        <div className='flex m-0 p-0 w-20vw border-gray-700'>
             <div className='p-2 w-full'>
                 <ul>
                     <li className='flex p-1 mb-2 items-center rounded-xl shadow-sidebar-items bg-white cursor-pointer hover:shadow-none hover:translate-y-1 duration-300'>
@@ -44,18 +46,9 @@ const Sidebar = () => {
                 </ul>
                 <hr className='my-2' />
                 <ul>
-                    <li className='flex items-center mt-2'>
-                        <img src="/assets/person/2.jpeg" alt="" className='h-8 w-8 rounded-full object-cover' />
-                        <span className='ml-2'>ShinCode</span>
-                    </li>
-                    <li className='flex items-center mt-2'>
-                        <img src="/assets/person/3.jpeg" alt="" className='h-8 w-8 rounded-full object-cover' />
-                        <span className='ml-2'>ShinCode</span>
-                    </li>
-                    <li className='flex items-center mt-2'>
-                        <img src="/assets/person/4.jpeg" alt="" className='h-8 w-8 rounded-full object-cover' />
-                        <span className='ml-2'>ShinCode</span>
-                    </li>
+                    {Users.map((user) => {
+                        return <CloseFriend user={user} key={user.id} />
+                    })}
                 </ul>
             </div>
         </div>
