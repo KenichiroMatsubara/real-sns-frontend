@@ -8,6 +8,7 @@ import PersonIcon from '@mui/icons-material/Person';
 import SettingsIcon from '@mui/icons-material/Settings';
 import CloseFriend from './CloseFriend';
 import { Users } from '../dummyData';
+import { Link } from 'react-router-dom';
 
 
 const Sidebar = () => {
@@ -15,10 +16,12 @@ const Sidebar = () => {
         <div className='flex m-0 p-0 w-20vw border-gray-700'>
             <div className='p-2 w-full'>
                 <ul>
-                    <li className='flex p-1 mb-2 items-center rounded-xl shadow-sidebar-items bg-white cursor-pointer hover:shadow-none hover:translate-y-1 duration-300'>
-                        <HomeIcon className='' />
-                        <span className='pl-2'>ホーム</span>
-                    </li>
+                    <Link to="/">
+                        <li className='flex p-1 mb-2 items-center rounded-xl shadow-sidebar-items bg-white cursor-pointer hover:shadow-none hover:translate-y-1 duration-300'>
+                            <HomeIcon className='' />
+                            <span className='pl-2'>ホーム</span>
+                        </li>
+                    </Link>
                     <li className='flex p-1 mb-2 items-center rounded-xl shadow-sidebar-items bg-white cursor-pointer hover:shadow-none hover:translate-y-1 duration-300'>
                         <SearchIcon className='' />
                         <span className='pl-2'>検索</span>
@@ -35,10 +38,12 @@ const Sidebar = () => {
                         <BookmarkIcon className='' />
                         <span className='pl-2'>ブックマーク</span>
                     </li>
-                    <li className='flex p-1 mb-2 items-center rounded-xl shadow-sidebar-items bg-white cursor-pointer hover:shadow-none hover:translate-y-1 duration-300'>
-                        <PersonIcon className='' />
-                        <span className='pl-2'>プロフィール</span>
-                    </li>
+                    <Link to='/profile/matsubara'>
+                        <li className='flex p-1 mb-2 items-center rounded-xl shadow-sidebar-items bg-white cursor-pointer hover:shadow-none hover:translate-y-1 duration-300'>
+                            <PersonIcon className='' />
+                                <span className='pl-2'>プロフィール</span>
+                        </li>
+                    </Link>
                     <li className='flex p-1 mb-2 items-center rounded-xl shadow-sidebar-items bg-white cursor-pointer hover:shadow-none hover:translate-y-1 duration-300'>
                         <SettingsIcon className='' />
                         <span className='pl-2'>設定</span>

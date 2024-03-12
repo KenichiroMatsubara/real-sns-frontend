@@ -3,7 +3,6 @@ import { Topbar } from '../components/Topbar'
 import Sidebar from '../components/Sidebar'
 import TimeLine from '../components/TimeLine'
 import Rightbar from '../components/Rightbar'
-import { useWindowSize } from '../hooks/useWindowSize'
 
 export const Home = () => {
     return (
@@ -14,7 +13,6 @@ export const Home = () => {
                 <TimeLine />
                 <Rightbar />
             </div>
-            W:{useWindowSize().windowWidth} H:{useWindowSize().windowHeight}
         </>
     )
 }

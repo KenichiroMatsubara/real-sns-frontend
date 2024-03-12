@@ -4,29 +4,30 @@ import { Users } from '../dummyData'
 
 
 const Rightbar = (props) => {
-    const {profile} = props;
+    const {user} = props;
+    const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER;
     const HomeRightbar = () => {
         return (
             <div className=' w-30vw'>
                 <div className='pt-5 pr-5'>
                     <div className='flex items-center'>
-                        <img src="/assets/star.png" alt="" className='mr-1 h-8 w-8' />
+                        <img src={PUBLIC_FOLDER + "/star.png"} alt="" className='mr-1 h-8 w-8' />
                         <span className='font-light text-base'>
                             <b>フォロワー限定</b>イベント開催中!
                         </span>
                     </div>
-                    <img src="assets/event.jpeg" alt="" className='w-full rounded-xl my-6 mx-0' />
+                    <img src={PUBLIC_FOLDER + "/event.jpeg"} alt="" className='w-full rounded-xl my-6 mx-0' />
                     <h4 className='mt-5'>オンラインの友達</h4>
                     <ul>
                         {Users.map((user) => {
-                            return <Online user={user} key={user.div} />;
+                            return <Online user={user} key={user.userId} />;
                         })}
                     </ul>
                     <p className=' text-lg font-semibold -mb-2'>
                         プロモーション広告
                     </p>
                     <img
-                        src="/assets/promotion/promotion1.jpeg"
+                        src={PUBLIC_FOLDER + "/promotion/promotion1.jpeg"}
                         alt=""
                         className=' w-4/5 rounded-xl my-6 mx-0'
                     />
@@ -48,23 +49,23 @@ const Rightbar = (props) => {
                     <h4>あなたの友達</h4>
                     <div className='flex flex-wrap justify-between'>
                         <div className='flex flex-col items-center justify-center mb-5 cursor-pointer'>
-                            <img src="/assets/person/1.jpeg" alt="" className=' w-16 h-16 object-cover rounded-xl' />
+                            <img src={PUBLIC_FOLDER + "/person/1.jpeg"} alt="" className=' w-16 h-16 object-cover rounded-xl' />
                             <span>Shin Code</span>
                         </div>
                         <div className='flex flex-col items-center justify-center mb-5 cursor-pointer'>
-                            <img src="/assets/person/1.jpeg" alt="" className=' w-16 h-16 object-cover rounded-xl' />
+                            <img src={PUBLIC_FOLDER + "/person/1.jpeg"} alt="" className=' w-16 h-16 object-cover rounded-xl' />
                             <span>Shin Code</span>
                         </div>
                         <div className='flex flex-col items-center justify-center mb-5 cursor-pointer'>
-                            <img src="/assets/person/1.jpeg" alt="" className=' w-16 h-16 object-cover rounded-xl' />
+                            <img src={PUBLIC_FOLDER + "/person/1.jpeg"} alt="" className=' w-16 h-16 object-cover rounded-xl' />
                             <span>Shin Code</span>
                         </div>
                         <div className='flex flex-col items-center justify-center mb-5 cursor-pointer'>
-                            <img src="/assets/person/1.jpeg" alt="" className=' w-16 h-16 object-cover rounded-xl' />
+                            <img src={PUBLIC_FOLDER + "/person/1.jpeg"} alt="" className=' w-16 h-16 object-cover rounded-xl' />
                             <span>Shin Code</span>
                         </div>
                         <div className='flex flex-col items-center justify-center mb-5 cursor-pointer'>
-                            <img src="/assets/person/1.jpeg" alt="" className=' w-16 h-16 object-cover rounded-xl' />
+                            <img src={PUBLIC_FOLDER + "/person/1.jpeg"} alt="" className=' w-16 h-16 object-cover rounded-xl' />
                             <span>Shin Code</span>
                         </div>
                     </div>
@@ -75,7 +76,7 @@ const Rightbar = (props) => {
 
     return (
         <>
-            {profile ? <ProfileRightbar /> : <HomeRightbar />}
+            {user ? <ProfileRightbar /> : <HomeRightbar />}
         </>
     )
 }
