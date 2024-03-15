@@ -17,11 +17,11 @@ const TimeLine = (props) => {
             const response = username ?
             await axios.get(REACT_APP_BASE_API_URL + `/posts/profile/${username}`)// プロフィールの場合
             : await axios.get(REACT_APP_BASE_API_URL + `/posts/timeline/${user._id}`); // ホームの場合
-            console.log(response);
             setPosts(response.data.sort((post1,post2) => {
                 return new Date(post2.createdAt) - new Date(post1.createdAt)
             }));
         };
+        console.log(user);
         fetchPosts();
     },[username,user._id]);
 
