@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useRef, useState, useContext } from 'react'
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import sha256 from 'crypto-js/sha256';
 import { useCookies } from 'react-cookie';
 import { loginCall } from '../actionCall';
@@ -71,7 +71,9 @@ const Register = () => {
                         <input type='password' className='h-12 rounded-xl border-1 border-gray-500 text-lg pl-5 mb-2' placeholder='確認用パスワード' required minLength={"6"} ref={passwordConfirmation} />
                         {notEqPassword && <span className='text-red-600 text-sm pb-1 text-center'>パスワードと確認用パスワードが異なります</span>}
                         <button className='h-12 rounded-xl bg-login-purple text-white font-medium cursor-pointer mb-1'>サインアップ</button>
-                        <button className='h-12 w-4/6 self-center rounded-xl bg-login-green text-white font-medium cursor-pointer' type='submit'>ログイン</button>
+                        <Link to={"/login"}>
+                            <button className='h-12 w-4/6 self-center rounded-xl bg-login-green text-white font-medium cursor-pointer' type='submit'>ログイン</button>
+                        </Link>
                     </form>
                 </div>
             </div>
