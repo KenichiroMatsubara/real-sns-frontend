@@ -21,7 +21,6 @@ const TimeLine = (props) => {
                 return new Date(post2.createdAt) - new Date(post1.createdAt)
             }));
         };
-        console.log(user);
         fetchPosts();
     },[username,user._id]);
 

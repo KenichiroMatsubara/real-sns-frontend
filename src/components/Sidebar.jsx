@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import HomeIcon from '@mui/icons-material/Home';
 import SearchIcon from '@mui/icons-material/Search';
 import NotificationsIcon from '@mui/icons-material/Notifications';
@@ -9,9 +9,11 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import CloseFriend from './CloseFriend';
 import { Users } from '../dummyData';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../state/AuthContext';
 
 
 const Sidebar = () => {
+    const {user} = useContext(AuthContext);
     return (
         <div className='flex m-0 p-0 w-20vw border-gray-700'>
             <div className='p-2 w-full'>
@@ -38,10 +40,10 @@ const Sidebar = () => {
                         <BookmarkIcon className='' />
                         <span className='pl-2'>ブックマーク</span>
                     </li>
-                    <Link to='/profile/matsubara'>
+                    <Link to={`/profile/${user.username}`}>
                         <li className='flex p-1 mb-2 items-center rounded-xl shadow-sidebar-items bg-white cursor-pointer hover:shadow-none hover:translate-y-1 duration-300'>
                             <PersonIcon className='' />
-                                <span className='pl-2'>プロフィール</span>
+                            <span className='pl-2'>プロフィール</span>
                         </li>
                     </Link>
                     <li className='flex p-1 mb-2 items-center rounded-xl shadow-sidebar-items bg-white cursor-pointer hover:shadow-none hover:translate-y-1 duration-300'>

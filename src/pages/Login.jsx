@@ -3,6 +3,7 @@ import { loginCall } from '../actionCall';
 import { AuthContext } from '../state/AuthContext';
 import sha256 from 'crypto-js/sha256';
 import { useCookies } from "react-cookie";
+import { Link } from 'react-router-dom';
 
 const Login = () => {
     const email = useRef();
@@ -72,7 +73,9 @@ const Login = () => {
                         />
                         <button className='h-12 rounded-xl bg-login-purple text-white font-medium cursor-pointer mb-1'>ログイン</button>
                         <span className=' text-center text-sm text-login-purple mb-1'>パスワードを忘れた方へ</span>
-                        <button className='h-12 w-4/6 self-center rounded-xl bg-login-green text-white font-medium cursor-pointer'>新しいアカウントの作成</button>
+                        <Link to={"/register"} className='text-center'>
+                            <button className='h-12 w-4/6 self-center rounded-xl bg-login-green text-white font-medium cursor-pointer'>新しいアカウントの作成</button>
+                        </Link>
                         <div className='flex items-center justify-center'>
                             <input
                                 type='checkbox'

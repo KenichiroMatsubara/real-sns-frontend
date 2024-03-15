@@ -11,6 +11,7 @@ module.exports = {
                 'login-blue': '#f0f2f5',
                 'login-purple': '#41428b',
                 'login-green': '#3c8b50',
+                'logout-blue': "#bce7ff",
                 // topbar-icon-badge-colorの略
             },
             boxShadow: {

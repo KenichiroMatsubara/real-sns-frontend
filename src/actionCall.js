@@ -10,3 +10,7 @@ export const loginCall = async (user,dispatch) => {
         dispatch({type: "LOGIN_ERROR", payload: error})
     }
 }
+
+export const logoutCall = async (dispatch) => {
+    dispatch({type: "LOGOUT"});
+}
