@@ -8,6 +8,7 @@ import axios from 'axios';
 
 const Share = () => {
     const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER;
+    const REACT_APP_BASE_API_URL = process.env.REACT_APP_BASE_API_URL;
     const {user} = useContext(AuthContext);
     const [file,setFile] = useState(null);
 
@@ -28,13 +29,13 @@ const Share = () => {
             newPost.img = fileName;
             try {
                 // 画像APIを叩く
-                await axios.post("/upload",data)
+                await axios.post(REACT_APP_BASE_API_URL + "/upload",data)
             } catch (error) {
                 console.log(error);
             }
         }
         try {
-            await axios.post("/posts",newPost);
+            await axios.post(REACT_APP_BASE_API_URL + "/posts",newPost);
             window.location.reload();
         } catch (error) {
             console.log(error);

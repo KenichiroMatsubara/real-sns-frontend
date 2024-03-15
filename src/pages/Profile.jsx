@@ -8,13 +8,14 @@ import axios from 'axios'
 
 const Profile = () => {
     const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER;
+    const REACT_APP_BASE_API_URL = process.env.REACT_APP_BASE_API_URL;
 
     const [user,setUser] = useState({});
     const username = useParams().username;
 
     useEffect(() => {
         const fetchUser = async () => {
-            const response = await axios.get(`/users?username=${username}`);
+            const response = await axios.get(REACT_APP_BASE_API_URL + `/users?username=${username}`);
             setUser(response.data);
         };
         fetchUser();

@@ -41,7 +41,7 @@ export const Topbar = () => {
                     </div>
                 </div>
                 <Link to={`/profile/${user.username}`}>
-                    <img src={user.profilePicture ?PUBLIC_FOLDER + user.profilePicture : PUBLIC_FOLDER + "/person/noAvatar.png"} alt=''
+                    <img src={user.profilePicture ? PUBLIC_FOLDER + user.profilePicture : PUBLIC_FOLDER + "/person/noAvatar.png"} alt=''
                         className='h-8 w-8 rounded-full cursor-pointer object-cover'
                     />
                 </Link>

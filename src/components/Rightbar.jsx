@@ -6,6 +6,7 @@ import { Users } from '../dummyData'
 const Rightbar = (props) => {
     const {user} = props;
     const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER;
+    const REACT_APP_BASE_API_URL = process.env.REACT_APP_BASE_API_URL;
     const HomeRightbar = () => {
         return (
             <div className=' w-30vw'>
@@ -49,23 +50,23 @@ const Rightbar = (props) => {
                     <h4>あなたの友達</h4>
                     <div className='flex flex-wrap justify-between'>
                         <div className='flex flex-col items-center justify-center mb-5 cursor-pointer'>
-                            <img src={PUBLIC_FOLDER + "/person/1.jpeg"} alt="" className=' w-16 h-16 object-cover rounded-xl' />
+                            <img src={REACT_APP_BASE_API_URL + PUBLIC_FOLDER + "/person/1.jpeg"} alt="" className=' w-16 h-16 object-cover rounded-xl' />
                             <span>Shin Code</span>
                         </div>
                         <div className='flex flex-col items-center justify-center mb-5 cursor-pointer'>
-                            <img src={PUBLIC_FOLDER + "/person/1.jpeg"} alt="" className=' w-16 h-16 object-cover rounded-xl' />
+                            <img src={REACT_APP_BASE_API_URL + PUBLIC_FOLDER + "/person/1.jpeg"} alt="" className=' w-16 h-16 object-cover rounded-xl' />
                             <span>Shin Code</span>
                         </div>
                         <div className='flex flex-col items-center justify-center mb-5 cursor-pointer'>
-                            <img src={PUBLIC_FOLDER + "/person/1.jpeg"} alt="" className=' w-16 h-16 object-cover rounded-xl' />
+                            <img src={REACT_APP_BASE_API_URL + PUBLIC_FOLDER + "/person/1.jpeg"} alt="" className=' w-16 h-16 object-cover rounded-xl' />
                             <span>Shin Code</span>
                         </div>
                         <div className='flex flex-col items-center justify-center mb-5 cursor-pointer'>
-                            <img src={PUBLIC_FOLDER + "/person/1.jpeg"} alt="" className=' w-16 h-16 object-cover rounded-xl' />
+                            <img src={REACT_APP_BASE_API_URL + PUBLIC_FOLDER + "/person/1.jpeg"} alt="" className=' w-16 h-16 object-cover rounded-xl' />
                             <span>Shin Code</span>
                         </div>
                         <div className='flex flex-col items-center justify-center mb-5 cursor-pointer'>
-                            <img src={PUBLIC_FOLDER + "/person/1.jpeg"} alt="" className=' w-16 h-16 object-cover rounded-xl' />
+                            <img src={REACT_APP_BASE_API_URL + PUBLIC_FOLDER + "/person/1.jpeg"} alt="" className=' w-16 h-16 object-cover rounded-xl' />
                             <span>Shin Code</span>
                         </div>
                     </div>

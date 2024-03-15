@@ -7,6 +7,7 @@ import { loginCall } from '../actionCall';
 import { AuthContext } from '../state/AuthContext';
 
 const Register = () => {
+    const REACT_APP_BASE_API_URL = process.env.REACT_APP_BASE_API_URL;
     const [notEqPassword,setNotEqPassword] = useState(false);
     const {user, isFecthing, error, dispatch} = useContext(AuthContext);
     const username = useRef();
@@ -46,7 +47,7 @@ const Register = () => {
                     email: email.current.value,
                     password: sha256(password.current.value).toString(),
                 }
-                await axios.post("/auth/register", user);
+                await axios.post(REACT_APP_BASE_API_URL + "/auth/register", user);
                 navigate("/login");
             } catch (error) {
                 console.log(error);

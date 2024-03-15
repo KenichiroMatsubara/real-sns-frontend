@@ -10,7 +10,6 @@ import { useContext, useEffect } from "react";
 function App() {
     const {user, isFecthing, error, dispatch} = useContext(AuthContext);
 
-
     return (
         <Router>
             <Routes>

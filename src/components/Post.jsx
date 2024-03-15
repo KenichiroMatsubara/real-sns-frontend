@@ -9,6 +9,7 @@ import { AuthContext } from '../state/AuthContext';
 const Post = (props) => {
     const {post}=props;
     const PUBLIC_FOLDER = process.env.REACT_APP_PUBLIC_FOLDER;
+    const REACT_APP_BASE_API_URL = process.env.REACT_APP_BASE_API_URL;
 
     const [like,setLike] = useState(post.likes.length);
     const [isLiked,setIsLiked] = useState(false);
@@ -18,7 +19,7 @@ const Post = (props) => {
 
     useEffect(() => {
         const fetchUser = async () => {
-            const response = await axios.get(`/users?userId=${post.userId}`);
+            const response = await axios.get(REACT_APP_BASE_API_URL + `/users?userId=${post.userId}`);
             setUser(response.data);
         };
         fetchUser();
@@ -28,7 +29,7 @@ const Post = (props) => {
     const handleLike = async () => {
         try {
             // いいねのAPIをたたく
-            await axios.put(`/posts/${post._id}/like`,{userId: currentUser._id});
+            await axios.put(REACT_APP_BASE_API_URL + `/posts/${post._id}/like`,{userId: currentUser._id});
         } catch (error) {
             console.log(error);
         }

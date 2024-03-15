@@ -6,6 +6,7 @@ import axios from "axios";
 import { AuthContext } from '../state/AuthContext';
 
 const TimeLine = (props) => {
+    const REACT_APP_BASE_API_URL = process.env.REACT_APP_BASE_API_URL;
     const {username} = props;
     const [posts,setPosts] = useState([]);
 
@@ -14,14 +15,16 @@ const TimeLine = (props) => {
     useEffect(() => {
         const fetchPosts = async () => {
             const response = username ?
-            await axios.get(`/posts/profile/${username}`)// プロフィールの場合
-            : await axios.get(`/posts/timeline/${user._id}`); // ホームの場合
+            await axios.get(REACT_APP_BASE_API_URL + `/posts/profile/${username}`)// プロフィールの場合
+            : await axios.get(REACT_APP_BASE_API_URL + `/posts/timeline/${user._id}`); // ホームの場合
+            console.log(response);
             setPosts(response.data.sort((post1,post2) => {
                 return new Date(post2.createdAt) - new Date(post1.createdAt)
             }));
         };
         fetchPosts();
     },[username,user._id]);
+
 
     return (
         <div className='w-50vw'>
